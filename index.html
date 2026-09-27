@@ -8,12 +8,13 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --primary: #238636;
-            --primary-hover: #2ea043;
             --text: #f0f6fc;
             --text-secondary: #8b949e;
             --border: #30363d;
             --accent: #58a6ff;
+            /* MATCHING LOGO BRAND GRADIENT */
+            --logo-gradient: linear-gradient(135deg, #238636, #1f6feb);
+            --logo-gradient-hover: linear-gradient(135deg, #2ea043, #388bfd);
         }
 
         * {
@@ -40,16 +41,16 @@
         }
 
         .logo-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, #238636, #1f6feb);
-            border-radius: 18px;
+            width: 76px;
+            height: 76px;
+            background: var(--logo-gradient);
+            border-radius: 20px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 20px;
-            box-shadow: 0 8px 24px rgba(35, 134, 54, 0.3);
+            box-shadow: 0 8px 24px rgba(31, 111, 235, 0.35);
         }
 
         .badge {
@@ -77,25 +78,26 @@
             margin: 0 0 36px;
         }
 
+        /* DOWNLOAD BUTTON (SAME COLOR AS LOGO) */
         .download-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
             padding: 18px 40px;
-            background-color: var(--primary);
+            background: var(--logo-gradient);
             color: #ffffff;
             font-size: 19px;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: all 0.2s ease;
-            box-shadow: 0 6px 20px rgba(35, 134, 54, 0.4);
+            box-shadow: 0 6px 20px rgba(31, 111, 235, 0.4);
         }
 
         .download-btn:hover {
-            background-color: var(--primary-hover);
+            background: var(--logo-gradient-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(35, 134, 54, 0.5);
+            box-shadow: 0 8px 25px rgba(31, 111, 235, 0.55);
         }
 
         .file-info {
