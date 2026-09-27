@@ -13,6 +13,11 @@
             --text: #f0f6fc;
             --text-secondary: #8b949e;
             --border: #30363d;
+            --accent: #58a6ff;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -23,68 +28,106 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* HEADER / HERO */
+        header {
+            padding: 80px 20px 50px;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        header {
-            padding: 80px 20px 40px;
-            max-width: 800px;
-            margin: 0 auto;
+        .logo-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #238636, #1f6feb);
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(35, 134, 54, 0.3);
         }
 
         .badge {
             display: inline-block;
-            padding: 6px 12px;
-            background: #1f6feb22;
-            color: #58a6ff;
+            padding: 6px 14px;
+            background: rgba(31, 111, 235, 0.15);
+            color: var(--accent);
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 20px;
-            border: 1px solid #1f6feb44;
+            border: 1px solid rgba(31, 111, 235, 0.3);
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin: 0 0 16px;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
         }
 
         p.subtitle {
             font-size: 20px;
             color: var(--text-secondary);
-            margin: 0 0 32px;
-            line-height: 1.5;
+            margin: 0 0 36px;
         }
 
         .download-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 16px 36px;
+            gap: 12px;
+            padding: 18px 40px;
             background-color: var(--primary);
             color: #ffffff;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.2s, transform 0.1s;
-            box-shadow: 0 4px 14px rgba(35, 134, 54, 0.4);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(35, 134, 54, 0.4);
         }
 
         .download-btn:hover {
             background-color: var(--primary-hover);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(35, 134, 54, 0.5);
         }
 
+        .file-info {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        section {
+            margin-top: 60px;
+        }
+
+        h2.section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        /* FEATURE CARDS */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
         }
 
         .feature-card {
@@ -92,59 +135,167 @@
             border: 1px solid var(--border);
             padding: 24px;
             border-radius: 12px;
-            text-align: left;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
         }
 
         .feature-card h3 {
             margin-top: 0;
-            color: #58a6ff;
+            font-size: 18px;
+            color: var(--accent);
         }
 
         .feature-card p {
             color: var(--text-secondary);
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 0;
         }
 
+        /* CHANGELOG & DETAILS */
+        .grid-two {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: 12px;
+        }
+
+        .info-box ul {
+            padding-left: 20px;
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .info-box li {
+            margin-bottom: 10px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: var(--text);
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* FOOTER */
         footer {
             margin-top: auto;
-            padding: 20px;
+            padding: 30px 20px;
             color: var(--text-secondary);
             font-size: 14px;
             border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <span class="badge">Version 1.5.0 Available</span>
+        <div class="logo-icon">📦</div>
+        <br>
+        <span class="badge">Version 1.5.0 Released</span>
         <h1>StockEase</h1>
-        <p class="subtitle">Fast, intuitive, and secure inventory management for Windows PC.</p>
+        <p class="subtitle">Fast, intuitive, and secure inventory management system built for Windows PC.</p>
         
-        <!-- REPLACE THE href BELOW WITH YOUR ACTUAL DOWNLOAD LINK -->
         <a href="https://github.com/inventorymanager000-ux/StockEase/releases/download/v1.5.0/StockEase_Setup.exe" class="download-btn">
-            💻 Download for Windows PC (.exe)
+            💻 Download StockEase for PC
         </a>
+        <div class="file-info">Windows 10 / 11 (64-bit) • StockEase_Setup.exe (~19.9 MB)</div>
     </header>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>⚡ Fast & Reliable</h3>
-            <p>Built for speed and seamless daily stock management operations.</p>
-        </div>
-        <div class="feature-card">
-            <h3>📊 Real-time Tracking</h3>
-            <p>Keep track of products, quantities, and sales updates instantly.</p>
-        </div>
-        <div class="feature-card">
-            <h3>🔒 Secure Storage</h3>
-            <p>Your business data is stored safely with enterprise-level security.</p>
-        </div>
-    </section>
+    <div class="container">
+        <!-- FEATURES -->
+        <section>
+            <h2 class="section-title">Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>⚡ High Performance</h3>
+                    <p>Designed for instant stock lookups, rapid product additions, and quick inventory updates.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Real-time Analytics</h3>
+                    <p>Track your stock quantities, low stock alerts, and sales movements seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Safe & Offline Ready</h3>
+                    <p>Your local database stays secure on your PC, ensuring data safety and privacy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANGELOG & REQUIREMENTS -->
+        <section>
+            <div class="grid-two">
+                <div class="info-box">
+                    <h3 style="margin-top:0; color: var(--accent);">✨ What's New in v1.5.0</h3>
+                    <ul>
+                        <li>Improved inventory dashboard loading speed.</li>
+                        <li>Enhanced report export functionality.</li>
+                        <li>UI polish and user experience improvements.</li>
+                        <li>Minor bug fixes and performance enhancements.</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3 style="margin-top:0; color: var(--accent);">🖥️ System Requirements</h3>
+                    <ul>
+                        <li><strong>OS:</strong> Windows 10 or Windows 11 (64-bit)</li>
+                        <li><strong>Processor:</strong> 1.6 GHz or faster</li>
+                        <li><strong>Memory:</strong> 2 GB RAM minimum</li>
+                        <li><strong>Storage:</strong> 150 MB available space</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>How do I install StockEase on my PC?</h4>
+                <p>Download the <code>StockEase_Setup.exe</code> file using the button above, double-click to run the installer, and follow the on-screen instructions.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I update to a newer version in the future?</h4>
+                <p>When a new version is released, simply download the latest setup file and run it. Your existing inventory data will remain intact.</p>
+            </div>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2026 StockEase. Powered by GitHub Pages.</p>
+        <p>© 2026 StockEase. Hosted on <a href="https://github.com/inventorymanager000-ux/StockEase" target="_blank">GitHub</a>.</p>
     </footer>
 
 </body>
