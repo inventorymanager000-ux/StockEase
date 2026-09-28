@@ -12,9 +12,9 @@
             --text-secondary: #8b949e;
             --border: #30363d;
             --accent: #58a6ff;
-            /* MATCHING LOGO BRAND GRADIENT */
-            --logo-gradient: linear-gradient(135deg, #238636, #1f6feb);
-            --logo-gradient-hover: linear-gradient(135deg, #2ea043, #388bfd);
+            /* EXACT SAME BRAND COLOR FOR BOTH LOGO AND BUTTON */
+            --brand-color: #1f6feb;
+            --brand-hover: #388bfd;
         }
 
         * {
@@ -40,10 +40,11 @@
             text-align: center;
         }
 
+        /* LOGO ICON */
         .logo-icon {
             width: 76px;
             height: 76px;
-            background: var(--logo-gradient);
+            background-color: var(--brand-color);
             border-radius: 20px;
             display: inline-flex;
             align-items: center;
@@ -78,13 +79,13 @@
             margin: 0 0 36px;
         }
 
-        /* DOWNLOAD BUTTON (SAME COLOR AS LOGO) */
+        /* DOWNLOAD BUTTON - EXACT SAME COLOR AS LOGO ICON */
         .download-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
             padding: 18px 40px;
-            background: var(--logo-gradient);
+            background-color: var(--brand-color);
             color: #ffffff;
             font-size: 19px;
             font-weight: 700;
@@ -95,7 +96,7 @@
         }
 
         .download-btn:hover {
-            background: var(--logo-gradient-hover);
+            background-color: var(--brand-hover);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(31, 111, 235, 0.55);
         }
