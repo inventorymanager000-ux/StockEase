@@ -76,17 +76,18 @@
             margin: 0 0 36px;
         }
 
-                /* DOWNLOAD BUTTON WITH EQUAL SIZES */
+                        /* DOWNLOAD BUTTON WITH EXACT EQUAL WIDTH */
         .download-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 18px 32px;
-            min-width: 280px; /* MAKES BOTH BUTTONS EQUAL WIDTH */
+            padding: 18px 20px;
+            width: 320px; /* FORCES BOTH BUTTONS TO BE EXACT SAME WIDTH */
+            max-width: 100%;
             background-color: var(--brand-color);
             color: #ffffff;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 700;
             text-decoration: none;
             border-radius: 12px;
